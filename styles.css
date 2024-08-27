@@ -20,8 +20,8 @@ body {
   position: absolute;
   width: 100px;
   height: 100px;
-  background: #fff; /* Making the dice face white */
-  border: 2px solid #ccc; /* Lighter border color */
+  background: #fff;
+  border: 2px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
