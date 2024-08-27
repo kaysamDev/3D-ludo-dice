@@ -1,0 +1,171 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(-30deg);
+  animation: roll 5s infinite;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff; /* Making the dice face white */
+  border: 2px solid #ccc; /* Lighter border color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Positioning the faces of the dice */
+.one {
+  transform: rotateY(0deg) translateZ(50px);
+}
+.two {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.three {
+  transform: rotateY(180deg) translateZ(50px);
+}
+.four {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.five {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.six {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* Dots Styling */
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+    /* Inner shadow */ 2px 2px 5px rgba(0, 0, 0, 0.2); /* Outer shadow */
+  background: radial-gradient(circle, #444, #000); /* Gradient for 3D effect */
+}
+
+/* Face 1 */
+.one .dot {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Face 2 */
+.two .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.two .dot:nth-child(2) {
+  bottom: 25%;
+  right: 25%;
+}
+
+/* Face 3 */
+.three .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.three .dot:nth-child(2) {
+  bottom: 25%;
+  right: 25%;
+}
+.three .dot:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Face 4 */
+.four .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.four .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.four .dot:nth-child(3) {
+  bottom: 25%;
+  left: 25%;
+}
+.four .dot:nth-child(4) {
+  bottom: 25%;
+  right: 25%;
+}
+
+/* Face 5 */
+.five .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.five .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.five .dot:nth-child(3) {
+  bottom: 25%;
+  left: 25%;
+}
+.five .dot:nth-child(4) {
+  bottom: 25%;
+  right: 25%;
+}
+.five .dot:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Face 6 */
+.six .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.six .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.six .dot:nth-child(3) {
+  bottom: 25%;
+  left: 25%;
+}
+.six .dot:nth-child(4) {
+  bottom: 25%;
+  right: 25%;
+}
+.six .dot:nth-child(5) {
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+}
+.six .dot:nth-child(6) {
+  top: 50%;
+  right: 25%;
+  transform: translateY(-50%);
+}
+
+/* Optional Animation */
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
